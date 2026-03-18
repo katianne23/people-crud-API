@@ -53,6 +53,15 @@ class Pessoa {
 
         return rows[0];
     }
+
+     static async findByTelefone(telefone) {
+        const [rows] = await pool.execute(
+            'SELECT * FROM pessoas WHERE telefone = ?',
+            [telefone]
+        );
+
+        return rows[0];
+    }
 }
 
 module.exports = Pessoa;
