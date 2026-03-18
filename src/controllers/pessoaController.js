@@ -119,6 +119,7 @@ class PessoaController {
   async findAll(req, res) {
     try {
       const pessoas = await Pessoa.findAll();
+      res.status(200).json(pessoas);
     } catch (error) {
       console.error("Erro ao listar pessoas:", error);
       res.status(500).json({ error: "Erro interno do servidor" });

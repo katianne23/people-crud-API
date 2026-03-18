@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 const pessoaSchema = Joi.object({
-  nome: Joi.string().min(3).max(100).required().message({
+  nome: Joi.string().min(3).max(100).required().messages({
     "string.min": "Nome deve ter no mínimo 3 caracteres",
     "string.max": "Nome deve ter no máximo 100 caracteres",
     "any.required": "Nome é obrigatório",

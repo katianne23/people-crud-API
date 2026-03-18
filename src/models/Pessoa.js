@@ -5,8 +5,8 @@ class Pessoa {
     static async create(pessoaData) {
         const { nome, email, data_nascimento, endereco, telefone } = pessoaData;
         const [result] = await pool.execute(
-            'INSERT INTO pessoas (nome, email, data_nascimento, endereco, telefone) VALUES (?,?,?,?,?)',
-            [nome, data_nascimento, email, endereco, telefone]
+            'INSERT INTO pessoas (nome, email, data_nascimento, endereco, telefone) VALUES (?, ?, ?, ?, ?)',
+            [nome, email, data_nascimento, endereco, telefone]
         );
         return result.insertId;
     }
